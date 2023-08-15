@@ -7,7 +7,9 @@ function App() {
   const [shapes, setShapes] = useState([]);
   const [bubbleX, setBubbleX] = useState(0);
   const [bubbleY, setBubbleY] = useState(0);
-  const [infoText, setInfoText] = useState('JUAN AMAYA DEVELOPER');
+  const [infoText, setInfoText] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupContent, setPopupContent] = useState('');
 
   useEffect(() => {
     const initialShapes = Array.from({ length: Math.ceil(17 * 10) }, (_, index) => ({
@@ -54,19 +56,18 @@ function App() {
     setBubbleY(clientY);
   };
 
-  const handleLinkClick = (link) => {
-    if (link === 'Enlace 1') {
-      setInfoText('Información del Enlace 1');
-    } else if (link === 'Enlace 2') {
-      setInfoText('Información del Enlace 2');
-    } else if (link === 'Enlace 3') {
-      setInfoText('Información del Enlace 3');
-    }
+  const handleButtonPopup = (content) => {
+    setPopupContent(content);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setPopupContent('');
+    setShowPopup(false);
   };
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
-      {/* Cambio en la imagen */}
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
 
       <div className="shapes-container">
@@ -97,17 +98,28 @@ function App() {
           <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
         </div>
         <div className="link-list">
-          <div className="link-item" onClick={() => handleLinkClick('Enlace 1')}>
+          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 1')}>
             PROYECTS
-          </div>
-          <div className="link-item" onClick={() => handleLinkClick('Enlace 2')}>
+          </button>
+          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 2')}>
             ABOUT ME
-          </div>
-          <div className="link-item" onClick={() => handleLinkClick('Enlace 3')}>
+          </button>
+          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 3')}>
             CONTACT
-          </div>
+          </button>
         </div>
       </div>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <button className="close-button" onClick={closePopup}>
+              X
+            </button>
+            {popupContent}
+          </div>
+        </div>
+      )}
 
       <div className="info-text">{infoText}</div>
     </div>
