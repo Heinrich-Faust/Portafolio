@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
-import cornerGif from './corner-gif.gif'; // Importa la URL de tu GIF aquí
+import cornerGif from './corner-gif.gif';
 
 function App() {
   const [shapes, setShapes] = useState([]);
