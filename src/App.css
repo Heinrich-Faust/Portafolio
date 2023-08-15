@@ -8,22 +8,11 @@ html {
 
 .App {
   position: relative;
-  width: 100%;
+  width: 100%;  
   min-height: 100vh;
   overflow: hidden;
   color: #ffffff;
   font-size: 16px; /* Tamaño de fuente base */
-}
-
-.corner-gif {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 15%;
-  padding: 2%;
-  border-radius: 50%;
-  border: 1px solid white;
-  z-index: 1;
 }
 
 .shapes-container {
@@ -51,6 +40,7 @@ html {
   font-size: 1em; /* Tamaño de fuente escalable */
   font-weight: bold;
 }
+
 
 .bubble-container {
   position: absolute;
@@ -97,38 +87,12 @@ html {
 .link-button {
   margin: 3px 0;
   padding: 3px 5px;
-  font-size: 0.75em; /* Tamaño de fuente escalable */
-  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 1em; /* Tamaño de fuente escalable */
+  font-family: 'Lucida Sans', cursive;
+  background-color: rgba(0, 0, 0, 0.384);
   color: #ffffff;
   cursor: pointer;
   border: none;
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 999;
-}
-
-.popup-content {
-  color: #ffffff;
-  font-size: 1em; /* Tamaño de fuente escalable */
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1em; /* Tamaño de fuente escalable */
-  cursor: pointer;
 }
 
 .info-text {

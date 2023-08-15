@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Link, Route, Routes, Route as RouteV6 } from 'react-router-dom';
 import './App.css';
 import bubbleImage from './bubble-image.png';
 import topLeftImage from './top-left-image.jpeg';
+import ProjectsPage from './ProjectsPage';
+import AboutPage from './AboutPage';
+import ContactPage from './ContactPage';
 
 function App() {
   const [shapes, setShapes] = useState([]);
   const [bubbleX, setBubbleX] = useState(0);
   const [bubbleY, setBubbleY] = useState(0);
-  const [infoText, setInfoText] = useState('');
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupContent, setPopupContent] = useState('');
+  const [infoText, setInfoText] = useState('JUAN AMAYA DEVELOPER');
 
   useEffect(() => {
-    const initialShapes = Array.from({ length: Math.ceil(17 * 10) }, (_, index) => ({
+    const initialShapes = Array.from({ length: Math.ceil(30 * 10) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -33,7 +35,7 @@ function App() {
         const dx = shape.x - clientX;
         const dy = shape.y - clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceFactor = 100 / (distance * distance); // Ajusta este valor para cambiar la fuerza del apartado
+        const forceFactor = 100 / (distance * distance);
 
         let newShape = {
           ...shape,
@@ -56,73 +58,60 @@ function App() {
     setBubbleY(clientY);
   };
 
-  const handleButtonPopup = (content) => {
-    setPopupContent(content);
-    setShowPopup(true);
-  };
-
-  const closePopup = () => {
-    setPopupContent('');
-    setShowPopup(false);
-  };
-
   return (
-    <div className="App" onMouseMove={handleMouseMove}>
-      <img src={topLeftImage} alt="Top Left" className="top-left-image" />
+    <Router>
+      <div className="App" onMouseMove={handleMouseMove}>
+        <img src={topLeftImage} alt="Top Left" className="top-left-image" />
 
-      <div className="shapes-container">
-        {shapes.map((shape) => (
+        <div className="shapes-container">
+          {shapes.map((shape) => (
+            <div
+              key={shape.id}
+              className={`shape ${shape.shape}`}
+              style={{
+                left: shape.x,
+                top: shape.y,
+                width: shape.size,
+                height: shape.size,
+                backgroundColor: shape.color,
+                boxShadow: `0px 0px 20px ${shape.color}`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="bubble-container">
           <div
-            key={shape.id}
-            className={`shape ${shape.shape}`}
+            className="bubble"
             style={{
-              left: shape.x,
-              top: shape.y,
-              width: shape.size,
-              height: shape.size,
-              backgroundColor: shape.color,
-              boxShadow: `0px 0px 20px ${shape.color}`,
+              left: bubbleX,
+              top: bubbleY,
             }}
-          />
-        ))}
-      </div>
-
-      <div className="bubble-container">
-        <div
-          className="bubble"
-          style={{
-            left: bubbleX,
-            top: bubbleY,
-          }}
-        >
-          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
-        </div>
-        <div className="link-list">
-          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 1')}>
-            PROYECTS
-          </button>
-          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 2')}>
-            ABOUT ME
-          </button>
-          <button className="link-button" onClick={() => handleButtonPopup('Información del Enlace 3')}>
-            CONTACT
-          </button>
-        </div>
-      </div>
-
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <button className="close-button" onClick={closePopup}>
-              X
-            </button>
-            {popupContent}
+          >
+            <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
+          </div>
+          <div className="link-list">
+            <a href="/projects" className="link-button" target="_blank" rel="noopener noreferrer">
+              PROYECTS
+            </a>
+            <a href="/about" className="link-button" target="_blank" rel="noopener noreferrer">
+              ABOUT ME
+            </a>
+            <a href="/contact" className="link-button" target="_blank" rel="noopener noreferrer">
+              CONTACT
+            </a>
           </div>
         </div>
-      )}
 
-      <div className="info-text">{infoText}</div>
-    </div>
+        <Routes>
+          <RouteV6 path="/projects" element={<ProjectsPage />} />
+          <RouteV6 path="/about" element={<AboutPage />} />
+          <RouteV6 path="/contact" element={<ContactPage />} />
+        </Routes>
+
+        <div className="info-text">{infoText}</div>
+      </div>
+    </Router>
   );
 }
 
