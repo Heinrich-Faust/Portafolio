@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
-import topLeftImage from './top-left-image.jpeg'; 
+import topLeftImage from './top-left-image.jpeg';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -10,7 +10,7 @@ function App() {
   const [infoText, setInfoText] = useState('JUAN AMAYA DEVELOPER');
 
   useEffect(() => {
-    const initialShapes = Array.from({ length: Math.ceil(17 * 5) }, (_, index) => ({
+    const initialShapes = Array.from({ length: Math.ceil(17 * 10) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -28,11 +28,15 @@ function App() {
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 0.075;
+        const dx = shape.x - clientX;
+        const dy = shape.y - clientY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const forceFactor = 100 / (distance * distance); // Ajusta este valor para cambiar la fuerza del apartado
 
         let newShape = {
           ...shape,
-          x: shape.x + shape.speedX * speedFactor,
-          y: shape.y + shape.speedY * speedFactor,
+          x: shape.x + shape.speedX * speedFactor + dx * forceFactor,
+          y: shape.y + shape.speedY * speedFactor + dy * forceFactor,
         };
 
         if (newShape.x < 0 || newShape.x > window.innerWidth) {
@@ -94,13 +98,13 @@ function App() {
         </div>
         <div className="link-list">
           <div className="link-item" onClick={() => handleLinkClick('Enlace 1')}>
-            Enlace 1
+            PROYECTS
           </div>
           <div className="link-item" onClick={() => handleLinkClick('Enlace 2')}>
-            Enlace 2
+            ABOUT ME
           </div>
           <div className="link-item" onClick={() => handleLinkClick('Enlace 3')}>
-            Enlace 3
+            CONTACT
           </div>
         </div>
       </div>
