@@ -40,7 +40,17 @@ html {
 
 .circle {
   transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f06, #9f6);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transform: rotate(-45deg) perspective(600px) rotateX(30deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
 }
+
 
 .bubble-container {
   position: absolute;
