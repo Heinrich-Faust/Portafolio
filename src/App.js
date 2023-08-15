@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
-import cornerGif from './corner-gif.gif';
+import topLeftImage from './top-left-image.jpeg'; 
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -62,7 +62,8 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
-      <img src={cornerGif} alt="GIF" className="corner-gif" />
+      {/* Cambio en la imagen */}
+      <img src={topLeftImage} alt="Top Left" className="top-left-image" />
 
       <div className="shapes-container">
         {shapes.map((shape) => (
@@ -110,4 +111,3 @@ function App() {
 }
 
 export default App;
-

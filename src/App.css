@@ -62,13 +62,16 @@ html {
   object-fit: cover;
   border-radius: 50%;
 }
-
 .top-left-image {
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  width: 7%;
-  z-index: 1;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 250px;
+  height: 250px;
+  border: 4px solid white;
+  border-radius: 50%; 
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  z-index: 999; 
 }
 
 .link-list {
