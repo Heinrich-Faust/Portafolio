@@ -14,6 +14,17 @@ html {
   color: #ffffff;
 }
 
+.corner-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px; /* Ajusta el tamaño de la imagen según tus preferencias */
+  height: 300px; /* Ajusta el tamaño de la imagen según tus preferencias */
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  border: 2px solid white; 
+  z-index: 1; /* Asegura que la imagen aparezca por encima de otros elementos */
+}
+
 .shapes-container {
   position: absolute;
   top: 0;
@@ -69,12 +80,21 @@ html {
 }
 
 .link-item {
-  margin: 5px 0;
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  font-size: 14px;
   cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.link-item.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.info-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 .info-text {

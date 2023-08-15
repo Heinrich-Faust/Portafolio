@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
-
+import cornerGif from './corner-gif.gif'; // Importa la URL de tu GIF aquí
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -61,8 +61,9 @@ function App() {
   };
 
   return (
-    
     <div className="App" onMouseMove={handleMouseMove}>
+      <img src={cornerGif} alt="GIF" className="corner-gif" />
+
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -109,3 +110,4 @@ function App() {
 }
 
 export default App;
+
