@@ -91,22 +91,22 @@ function App() {
             <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
           </div>
           <div className="link-list">
-            <a href="/projects" className="link-button" target="_blank" rel="noopener noreferrer">
-              PROYECTS
+            <a href="./ProjectsPage" className="link-button" target="_blank" rel="noopener noreferrer">
+              PROJECTS
             </a>
-            <a href="/about" className="link-button" target="_blank" rel="noopener noreferrer">
+            <a href="./AboutPage" className="link-button" target="_blank" rel="noopener noreferrer">
               ABOUT ME
             </a>
-            <a href="/contact" className="link-button" target="_blank" rel="noopener noreferrer">
+            <a href="./ContactPage" className="link-button" target="_blank" rel="noopener noreferrer">
               CONTACT
             </a>
           </div>
         </div>
 
         <Routes>
-          <RouteV6 path="/projects" element={<ProjectsPage />} />
-          <RouteV6 path="/about" element={<AboutPage />} />
-          <RouteV6 path="/contact" element={<ContactPage />} />
+          <RouteV6 path="./ProjectsPage" element={<ProjectsPage />} />
+          <RouteV6 path="./AboutPage" element={<AboutPage />} />
+          <RouteV6 path="./ContactPage" element={<ContactPage />} />
         </Routes>
 
         <div className="info-text">{infoText}</div>
