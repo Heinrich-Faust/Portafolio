@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes, Route as RouteV6 } from 'react-router-dom';
 import './App.css';
-import bubbleImage from './bubble-image.png';
+import bubbleImage from './components/bubble-image.png';
 import topLeftImage from './top-left-image.jpeg';
-import ProjectsPage from './ProjectsPage';
-import AboutPage from './AboutPage';
-import ContactPage from './ContactPage';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -59,59 +55,42 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App" onMouseMove={handleMouseMove}>
-        <img src={topLeftImage} alt="Top Left" className="top-left-image" />
+    <div className="App" onMouseMove={handleMouseMove}>
+      <img src={topLeftImage} alt="Top Left" className="top-left-image" />
 
-        <div className="shapes-container">
-          {shapes.map((shape) => (
-            <div
-              key={shape.id}
-              className={`shape ${shape.shape}`}
-              style={{
-                left: shape.x,
-                top: shape.y,
-                width: shape.size,
-                height: shape.size,
-                backgroundColor: shape.color,
-                boxShadow: `0px 0px 20px ${shape.color}`,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="bubble-container">
+      <div className="shapes-container">
+        {shapes.map((shape) => (
           <div
-            className="bubble"
+            key={shape.id}
+            className={`shape ${shape.shape}`}
             style={{
-              left: bubbleX,
-              top: bubbleY,
+              left: shape.x,
+              top: shape.y,
+              width: shape.size,
+              height: shape.size,
+              backgroundColor: shape.color,
+              boxShadow: `0px 0px 20px ${shape.color}`,
             }}
-          >
-            <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
-          </div>
-          <div className="link-list">
-            <a href="./ProjectsPage" className="link-button" target="_blank" rel="noopener noreferrer">
-              PROJECTS
-            </a>
-            <a href="./AboutPage" className="link-button" target="_blank" rel="noopener noreferrer">
-              ABOUT ME
-            </a>
-            <a href="./ContactPage" className="link-button" target="_blank" rel="noopener noreferrer">
-              CONTACT
-            </a>
-          </div>
-        </div>
-
-        <Routes>
-          <RouteV6 path="./ProjectsPage" element={<ProjectsPage />} />
-          <RouteV6 path="./AboutPage" element={<AboutPage />} />
-          <RouteV6 path="./ContactPage" element={<ContactPage />} />
-        </Routes>
-
-        <div className="info-text">{infoText}</div>
+          />
+        ))}
       </div>
-    </Router>
+
+      <div className="bubble-container">
+        <div
+          className="bubble"
+          style={{
+            left: bubbleX,
+            top: bubbleY,
+          }}
+        >
+          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
+        </div>
+      </div>
+
+    
+      
+      <div className="info-text">{infoText}</div>
+    </div>
   );
 }
 
