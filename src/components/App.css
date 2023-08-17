@@ -11,8 +11,23 @@ html {
   min-height: 100vh;
   overflow: hidden;
   color: #ffffff;
-  font-size: 16px; /* Tamaño de fuente base */
+  font-family: 'Pacifico';
+  font-size: 1em; /* Tamaño de fuente base */
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+nav li {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 
 .shapes-container {
   position: absolute;
@@ -31,75 +46,50 @@ html {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 142, 13));
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 1em; /* Tamaño de fuente escalable */
-  font-weight: bold;
 }
 
-
-.triangle {
-  transform: translate(-50%, -50%) rotate(45deg);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  background-color: transparent;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.square {
+.circle2 {
   transform: translate(-50%, -50%);
-  background: linear-gradient(45deg, rgb(0, 128, 0), rgb(0, 255, 0));
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(30, 151, 0), rgb(13, 17, 255));
+  transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 1em; /* Tamaño de fuente escalable */
 }
 
-.diamond {
+.circle1 {
   transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  background-color: transparent;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(0, 238, 255), rgb(131, 0, 253));
+  transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 1em; /* Tamaño de fuente escalable */
 }
 
-.hexagon {
+.circle3 {
   transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: transparent;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(253, 0, 63));
+  transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 1em; /* Tamaño de fuente escalable */
 }
+
+
 
 .bubble-container {
   position: absolute;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .bubble {
   position: absolute;
   width: 2%;
   padding-bottom: 2%;
-  pointer-events: none;
 }
 
 .bubble-image {
@@ -111,46 +101,25 @@ html {
 
 .top-left-image {
   position: fixed;
-  top: 20px;
+  top: 70px;
   left: 20px;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border: 4px solid white;
   border-radius: 50%;
   box-shadow: 0 0 10px rgb(255, 255, 255);
-  z-index: 999;
-}
-
-.link-list {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.link-button {
-  margin: 3px 0;
-  padding: 3px 5px;
-  font-size: 1em; /* Tamaño de fuente escalable */
-  font-family: 'Lucida Sans', cursive;
-  background-color: rgba(0, 0, 0, 0.384);
-  color: #ffffff;
-  cursor: pointer;
-  border: none;
+  z-index: 1;
 }
 
 .info-text {
   position: absolute;
-  bottom: 5%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
   font-family: 'Pacifico', cursive;
-  font-size: 2em; /* Tamaño de fuente escalable */
+  font-size: 4em; /* Tamaño de fuente escalable */
   color: #00ffdd;
   text-shadow: 0 0 10px rgba(0, 238, 255, 0.8), 0 0 20px rgba(0, 238, 255, 0.8), 0 0 30px rgba(0, 238, 255, 0.8);
-  animation: floatText 6s infinite linear;
+  animation: floatText 6s infinite;
 }
 
 /* Estilos para pantallas más pequeñas */
