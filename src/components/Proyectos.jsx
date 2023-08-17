@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import './tabcontent.css';
 import bubbleImage from './bubble-image.png';
+
+function TabContent({ projectName }) {
+  return (
+    <div className="tab-content">
+      <h2>{projectName}</h2>
+      {/* Agrega aquí la información específica del proyecto */}
+    </div>
+  );
+}
 
 function App() {
   const [shapes, setShapes] = useState([]);
   const [bubbleX, setBubbleX] = useState(0);
   const [bubbleY, setBubbleY] = useState(0);
+  const [activeTab, setActiveTab] = useState('proyecto1');
 
   useEffect(() => {
     const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
@@ -52,9 +63,12 @@ function App() {
     setBubbleY(clientY);
   };
 
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   return (
     <div className="App" onMouseMove={handleMouseMove}>
-
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -84,7 +98,38 @@ function App() {
         </div>
       </div>
 
-    </div>
+      <div className="tabs-container">
+        <button
+          className={`tab-button ${activeTab === 'proyecto1' ? 'active' : ''}`}
+          onClick={() => handleTabChange('proyecto1')}
+        >
+          Proyecto 1
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'proyecto2' ? 'active' : ''}`}
+          onClick={() => handleTabChange('proyecto2')}
+        >
+          Proyecto 2
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'proyecto3' ? 'active' : ''}`}
+          onClick={() => handleTabChange('proyecto3')}
+        >
+          Proyecto 3
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'proyecto4' ? 'active' : ''}`}
+          onClick={() => handleTabChange('proyecto4')}
+        >
+          Proyecto 4
+        </button>
+      </div>
+
+      {activeTab === 'proyecto1' && <TabContent projectName="Proyecto 1" />}
+      {activeTab === 'proyecto2' && <TabContent projectName="Proyecto 2" />}
+      {activeTab === 'proyecto3' && <TabContent projectName="Proyecto 3" />}
+      {activeTab === 'proyecto4' && <TabContent projectName="Proyecto 4" />}
+          </div>
   );
 }
 

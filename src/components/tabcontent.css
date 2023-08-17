@@ -1,0 +1,59 @@
+/* Estilos para el contenido de las pestañas */
+.tab-content {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999; /* Asegura que el componente se muestre por encima del fondo */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para los botones de las pestañas */
+  .tabs-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Dos columnas de tamaño automático */
+    grid-gap: 10px; /* Espacio entre los botones */
+    z-index: 9999;
+  }
+  
+  .tab-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .tabs-container {
+      top: 40%;
+    }
+  
+    .tab-content {
+      padding: 1em;
+    }
+  }
+  
