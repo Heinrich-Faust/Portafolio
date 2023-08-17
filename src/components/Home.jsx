@@ -4,12 +4,14 @@ import bubbleImage from './bubble-image.png';
 import topLeftImage from './top-left-image.jpeg';
 
 function App() {
-  const [shapes, setShapes] = useState([]);
-  const [bubbleX, setBubbleX] = useState(0);
-  const [bubbleY, setBubbleY] = useState(0);
-  const [infoText, setInfoText] = useState('JUAN AMAYA FRONT END DEVELOPER');
+  // State variables for managing shapes, bubble coordinates, and info text
+  const [shapes, setShapes] = useState([]); // Array to store shape properties
+  const [bubbleX, setBubbleX] = useState(0); // X-coordinate of the bubble
+  const [bubbleY, setBubbleY] = useState(0); // Y-coordinate of the bubble
+  const [infoText, setInfoText] = useState('JUAN AMAYA FRONT END DEVELOPER'); // Text to display
 
   useEffect(() => {
+    // Initialize shapes with random properties when component mounts
     const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
@@ -23,8 +25,11 @@ function App() {
     setShapes(initialShapes);
   }, []);
 
+  // Event handler for mouse movement
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
+
+    // Update shape positions based on mouse movement
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 0.095;
@@ -33,12 +38,14 @@ function App() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         const forceFactor = 200 / (distance * distance);
 
+        // Calculate new shape position with added forces
         let newShape = {
           ...shape,
           x: shape.x + shape.speedX * speedFactor + dx * forceFactor,
           y: shape.y + shape.speedY * speedFactor + dy * forceFactor,
         };
 
+        // Reflect shapes that go out of bounds
         if (newShape.x < 0 || newShape.x > window.innerWidth) {
           newShape.speedX *= -1;
         }
@@ -50,14 +57,17 @@ function App() {
       })
     );
 
+    // Update bubble coordinates based on mouse position
     setBubbleX(clientX);
     setBubbleY(clientY);
   };
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
+      {/* Top left image */}
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
 
+      {/* Container for shapes */}
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -75,6 +85,7 @@ function App() {
         ))}
       </div>
 
+      {/* Container for the bubble */}
       <div className="bubble-container">
         <div
           className="bubble"
@@ -83,12 +94,11 @@ function App() {
             top: bubbleY,
           }}
         >
-          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
+          <img src={bubbleImage} alt="Bubble" className="bubble-image" />
         </div>
       </div>
 
-    
-      
+      {/* Display info text */}
       <div className="info-text">{infoText}</div>
     </div>
   );
