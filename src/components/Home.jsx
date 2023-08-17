@@ -10,7 +10,7 @@ function App() {
   const [infoText, setInfoText] = useState('JUAN AMAYA FRONT END DEVELOPER');
 
   useEffect(() => {
-    const initialShapes = Array.from({ length: Math.ceil(30 * 20) }, (_, index) => ({
+    const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -27,7 +27,7 @@ function App() {
     const { clientX, clientY } = event;
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
-        const speedFactor = 0.075;
+        const speedFactor = 0.095;
         const dx = shape.x - clientX;
         const dy = shape.y - clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);

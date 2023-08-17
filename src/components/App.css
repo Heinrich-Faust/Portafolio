@@ -114,12 +114,27 @@ nav li {
 .info-text {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   font-family: 'Pacifico', cursive;
   font-size: 4em; /* Tamaño de fuente escalable */
-  color: #00ffdd;
-  text-shadow: 0 0 10px rgba(0, 238, 255, 0.8), 0 0 20px rgba(0, 238, 255, 0.8), 0 0 30px rgba(0, 238, 255, 0.8);
+  color: #0400ff;
+  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(0, 238, 255, 0.8), 0 0 30px rgba(0, 238, 255, 0.8);
   animation: floatText 6s infinite;
+}
+
+@keyframes floatText {
+  0%, 100% {
+    transform: translate(-50%, -50%) translate(calc(100px * cos(0deg)), calc(100px * sin(0deg)));
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(calc(100px * cos(90deg)), calc(100px * sin(90deg)));
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(calc(100px * cos(180deg)), calc(100px * sin(180deg)));
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(calc(100px * cos(270deg)), calc(100px * sin(270deg)));
+  }
 }
 
 /* Estilos para pantallas más pequeñas */
@@ -177,23 +192,5 @@ nav li {
     width: 100px;
     height: 100px;
     border-width: 1px;
-  }
-}
-
-@keyframes floatText {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-  }
-  25% {
-    transform: translate(-50%, -50%) translate(60px, -60px);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(0, 0);
-  }
-  75% {
-    transform: translate(-50%, -50%) translate(-60px, 60px);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(0, 0);
   }
 }
