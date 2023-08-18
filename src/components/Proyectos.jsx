@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import './tabcontent.css';
 import bubbleImage from './bubble-image.png';
+import Github from './github-icon.png';
 
-function TabContent({ projectName }) {
+function TabContent({ projectName, image1, image2, text, githubLink }) {
   return (
     <div className="tab-content">
-      <h2>{projectName}</h2>
-      {/* Agrega aquí la información específica del proyecto */}
+      <div className="images-container">
+        <img src={image1} alt="Imagen 1" />
+        <img src={image2} alt="Imagen 2" />
+      </div>
+      <div className="text-container">
+        <p>{text}</p>
+      </div>
+      <div className="github-button">
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <img src={Github} alt="github" className="github-logo" />
+        </a>
+      </div>
     </div>
   );
 }
@@ -67,6 +78,43 @@ function App() {
     setActiveTab(tabName);
   };
 
+  const tabContentData = [
+    {
+      tabName: 'proyecto1',
+      projectName: 'Amaya In Da House',
+      image1: 'Amaya-in-da-jaus-1.png',
+      image2: 'Amaya-in-da-jaus-2.png',
+      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
+      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
+    },
+    {
+      tabName: 'proyecto2',
+      projectName: 'Proyecto 2',
+      image1: 'imagen2_1.jpg',
+      image2: 'imagen2_2.jpg',
+      text: 'Texto para el Proyecto 2.',
+      githubLink: 'https://github.com/tu-usuario/repo2',
+    },
+    {
+      tabName: 'proyecto3',
+      projectName: 'Proyecto 3',
+      image1: 'imagen3_1.jpg',
+      image2: 'imagen3_2.jpg',
+      text: 'Texto para el Proyecto 3.',
+      githubLink: 'https://github.com/tu-usuario/repo3',
+    },
+    {
+      tabName: 'proyecto4',
+      projectName: 'Proyecto 4',
+      image1: 'imagen4_1.jpg',
+      image2: 'imagen4_2.jpg',
+      text: 'Texto para el Proyecto 4.',
+      githubLink: 'https://github.com/tu-usuario/repo4',
+    },
+  ];
+
+  const activeTabData = tabContentData.find((tabData) => tabData.tabName === activeTab);
+
   return (
     <div className="App" onMouseMove={handleMouseMove}>
       <div className="shapes-container">
@@ -99,37 +147,27 @@ function App() {
       </div>
 
       <div className="tabs-container">
-        <button
-          className={`tab-button ${activeTab === 'proyecto1' ? 'active' : ''}`}
-          onClick={() => handleTabChange('proyecto1')}
-        >
-          Proyecto 1
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'proyecto2' ? 'active' : ''}`}
-          onClick={() => handleTabChange('proyecto2')}
-        >
-          Proyecto 2
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'proyecto3' ? 'active' : ''}`}
-          onClick={() => handleTabChange('proyecto3')}
-        >
-          Proyecto 3
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'proyecto4' ? 'active' : ''}`}
-          onClick={() => handleTabChange('proyecto4')}
-        >
-          Proyecto 4
-        </button>
+        {tabContentData.map((tabData) => (
+          <button
+            key={tabData.tabName}
+            className={`tab-button ${activeTab === tabData.tabName ? 'active' : ''}`}
+            onClick={() => handleTabChange(tabData.tabName)}
+          >
+            {tabData.projectName}
+          </button>
+        ))}
       </div>
 
-      {activeTab === 'proyecto1' && <TabContent projectName="Proyecto 1" />}
-      {activeTab === 'proyecto2' && <TabContent projectName="Proyecto 2" />}
-      {activeTab === 'proyecto3' && <TabContent projectName="Proyecto 3" />}
-      {activeTab === 'proyecto4' && <TabContent projectName="Proyecto 4" />}
-          </div>
+      {activeTabData && (
+        <TabContent
+          projectName={activeTabData.projectName}
+          image1={activeTabData.image1}
+          image2={activeTabData.image2}
+          text={activeTabData.text}
+          githubLink={activeTabData.githubLink}
+        />
+      )}
+    </div>
   );
 }
 

@@ -14,7 +14,19 @@
     z-index: 9999; /* Asegura que el componente se muestre por encima del fondo */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
+  .text-container {
+  color: #000000;
+  font-family: 'Pacifico';
+  font-size: 1em;
+}
+  .github-logo{
+    position: fixed;
+    height: 2.5em;
+    width: 2.5em;
+    right: 1px;
+    bottom: 1px;
+  }
   /* Estilos para los botones de las pestañas */
   .tabs-container {
     position: fixed;
