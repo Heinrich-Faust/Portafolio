@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
-import topLeftImage from './top-left-image.jpeg';
+import topLeftImage from './top-left-image.png';
+import topRightImage from './top-right.png';
+import CenterImage from './center-image.png';
+import bottomimage from './bottom-image.png';
+import Center from './center.png';
+import infoImage from './info-image.png';
 
 function App() {
-  // State variables for managing shapes, bubble coordinates, and info text
-  const [shapes, setShapes] = useState([]); // Array to store shape properties
-  const [bubbleX, setBubbleX] = useState(0); // X-coordinate of the bubble
-  const [bubbleY, setBubbleY] = useState(0); // Y-coordinate of the bubble
-  const [infoText, setInfoText] = useState('JUAN AMAYA FRONT END DEVELOPER'); // Text to display
+  const [shapes, setShapes] = useState([]);
+  const [bubbleX, setBubbleX] = useState(0);
+  const [bubbleY, setBubbleY] = useState(0);
 
   useEffect(() => {
-    // Initialize shapes with random properties when component mounts
     const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
@@ -25,11 +27,9 @@ function App() {
     setShapes(initialShapes);
   }, []);
 
-  // Event handler for mouse movement
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
 
-    // Update shape positions based on mouse movement
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 0.095;
@@ -38,14 +38,12 @@ function App() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         const forceFactor = 200 / (distance * distance);
 
-        // Calculate new shape position with added forces
         let newShape = {
           ...shape,
           x: shape.x + shape.speedX * speedFactor + dx * forceFactor,
           y: shape.y + shape.speedY * speedFactor + dy * forceFactor,
         };
 
-        // Reflect shapes that go out of bounds
         if (newShape.x < 0 || newShape.x > window.innerWidth) {
           newShape.speedX *= -1;
         }
@@ -57,17 +55,19 @@ function App() {
       })
     );
 
-    // Update bubble coordinates based on mouse position
     setBubbleX(clientX);
     setBubbleY(clientY);
   };
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
-      {/* Top left image */}
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
+      <img src={bottomimage} alt="bottom" className="bottom-image" />
+      <img src={topRightImage} alt="Top Right" className="top-right" />
+      <img src={CenterImage} alt="Center Image" className="center-image" />
+      <img src={Center} alt="Center" className="center" />
 
-      {/* Container for shapes */}
+
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -85,7 +85,6 @@ function App() {
         ))}
       </div>
 
-      {/* Container for the bubble */}
       <div className="bubble-container">
         <div
           className="bubble"
@@ -98,8 +97,7 @@ function App() {
         </div>
       </div>
 
-      {/* Display info text */}
-      <div className="info-text">{infoText}</div>
+      <img src={infoImage} alt="Info" className="info-image" />
     </div>
   );
 }
