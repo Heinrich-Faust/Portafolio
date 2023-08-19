@@ -101,48 +101,70 @@ nav li {
 
 .top-left-image {
   position: fixed;
-  top: 300px;
-  left: 20px;
+  bottom: 0%;
+  left: 5%;
   width: 20em;
   height: 20em;
 }
 
 .center {
   position: fixed;
-  top: 70px;
-  left: 200px;
+  top: 10%;
+  left: 15%;
   width: 25em;
   height: 25em;
 }
 
 .center-image {
   position: fixed;
-  bottom: 0.25px;
-  left: 500px;
+  bottom: 0%;
+  left: 40%;
   width: 25em;
   height: 25em;
-}
-
-.top-right {
-  position: fixed;
-  top: 70px;
-  right: 100px;
-  width: 30em;
-  height: 30em;
 }
 
 .bottom-image {
   position: fixed;
-  bottom: 0.25px;
-  right: 0.25px;
+  top: 10%;
+  right: 5%;
   width: 25em;
   height: 25em;
 }
 
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 767px) {
+  .top-left-image {
+    bottom: 30%;
+    left: 1%;
+    transform: scale(1); /* Ajusta el valor de escala según tu preferencia */
+    transform-origin: center; /* Define el punto de origen de la escala */
+  }
+  
+  .center {
+    top: 0.1%;
+    left: 1%;
+    transform: scale(0.5); /* Ajusta el valor de escala según tu preferencia */
+    transform-origin: center; /* Define el punto de origen de la escala */
+  }
+
+  .center-image {
+    top: 30%;
+    left: 0%;
+    transform: scale(0.5); /* Ajusta el valor de escala según tu preferencia */
+    transform-origin: center; /* Define el punto de origen de la escala */
+  }
+
+  .bottom-image {
+    top: 10%;
+    right: 0%;
+    transform: scale(0.4); /* Ajusta el valor de escala según tu preferencia */
+    transform-origin: center; /* Define el punto de origen de la escala */
+  }
+}
 .info-image {
   position: absolute;
-  top: 50%;
-  left: 60%;
+  top: 20%;
+  left: 50%;
   height: 10em;
   width: 10em;
   border-radius: 100%;

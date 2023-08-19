@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
 import topLeftImage from './top-left-image.png';
-import topRightImage from './top-right.png';
 import CenterImage from './center-image.png';
 import bottomimage from './bottom-image.png';
 import Center from './center.png';
@@ -63,7 +62,6 @@ function App() {
     <div className="App" onMouseMove={handleMouseMove}>
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
       <img src={bottomimage} alt="bottom" className="bottom-image" />
-      <img src={topRightImage} alt="Top Right" className="top-right" />
       <img src={CenterImage} alt="Center Image" className="center-image" />
       <img src={Center} alt="Center" className="center" />
 

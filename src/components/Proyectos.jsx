@@ -3,6 +3,8 @@ import './App.css';
 import './tabcontent.css';
 import bubbleImage from './bubble-image.png';
 import Github from './github-icon.png';
+import AmayaImage1 from './Amaya-in-da-jaus-1.png';
+import AmayaImage2 from './Amaya-in-da-jaus-2.png';
 
 function TabContent({ projectName, image1, image2, text, githubLink }) {
   return (
@@ -82,35 +84,12 @@ function App() {
     {
       tabName: 'proyecto1',
       projectName: 'Amaya In Da House',
-      image1: 'Amaya-in-da-jaus-1.png',
-      image2: 'Amaya-in-da-jaus-2.png',
+      image1: AmayaImage1,
+      image2: AmayaImage2,
       text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
       githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
     },
-    {
-      tabName: 'proyecto2',
-      projectName: 'Proyecto 2',
-      image1: 'imagen2_1.jpg',
-      image2: 'imagen2_2.jpg',
-      text: 'Texto para el Proyecto 2.',
-      githubLink: 'https://github.com/tu-usuario/repo2',
-    },
-    {
-      tabName: 'proyecto3',
-      projectName: 'Proyecto 3',
-      image1: 'imagen3_1.jpg',
-      image2: 'imagen3_2.jpg',
-      text: 'Texto para el Proyecto 3.',
-      githubLink: 'https://github.com/tu-usuario/repo3',
-    },
-    {
-      tabName: 'proyecto4',
-      projectName: 'Proyecto 4',
-      image1: 'imagen4_1.jpg',
-      image2: 'imagen4_2.jpg',
-      text: 'Texto para el Proyecto 4.',
-      githubLink: 'https://github.com/tu-usuario/repo4',
-    },
+    
   ];
 
   const activeTabData = tabContentData.find((tabData) => tabData.tabName === activeTab);
