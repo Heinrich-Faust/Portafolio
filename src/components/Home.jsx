@@ -31,11 +31,11 @@ function App() {
 
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
-        const speedFactor = 0.095;
+        const speedFactor = 1;
         const dx = shape.x - clientX;
         const dy = shape.y - clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceFactor = 200 / (distance * distance);
+        const forceFactor = 300 / (distance * distance);
 
         let newShape = {
           ...shape,
@@ -62,7 +62,7 @@ function App() {
     <div className="App" onMouseMove={handleMouseMove}>
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
       <img src={bottomimage} alt="bottom" className="bottom-image" />
-      <img src={CenterImage} alt="Center Image" className="center-image" />
+      <img src={CenterImage} alt="top Center" className="center-image" />
       <img src={Center} alt="Center" className="center" />
 
 
@@ -72,6 +72,8 @@ function App() {
             key={shape.id}
             className={`shape ${shape.shape}`}
             style={{
+
+              
               left: shape.x,
               top: shape.y,
               width: shape.size,

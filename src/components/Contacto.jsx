@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
+import CenterImage from './bubble-image.png';
+import CenterImage1 from './info-image.png';
+import Github from './github-icon-1.png';
+import Whatsapp from './whatsapp.png';
+import Facebook from './Facebook.png';
+import Instagram from './Instagram.png';
+import Linkedin from './Linkedin.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -54,6 +61,9 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
+      <img src={CenterImage} alt="fondo" className="fondo" />
+      <img src={CenterImage1} alt="fondo1" className="fondo1" />
+      <img src={CenterImage1} alt="fondo2" className="fondo2" />
 
       <div className="shapes-container">
         {shapes.map((shape) => (
@@ -84,6 +94,23 @@ function App() {
         </div>
       </div>
 
+      <div className="social-icons">
+        <a href="Enlace de WhatsApp">
+          <img src={Whatsapp} alt="WhatsApp" className="social-icon" />
+        </a>
+        <a href="Enlace de Facebook">
+          <img src={Facebook} alt="Facebook" className="social-icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/juan-pablo-amaya-perez-00260824a">
+          <img src={Linkedin} alt="LinkedIn" className="social-icon" />
+        </a>
+        <a href="Enlace de Instagram">
+          <img src={Instagram} alt="Instagram" className="social-icon" />
+        </a>
+        <a href="https://github.com/Heinrich-Faust">
+          <img src={Github} alt="github" className="social-icon" />
+        </a>
+      </div>
     </div>
   );
 }
