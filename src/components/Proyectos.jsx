@@ -5,6 +5,8 @@ import bubbleImage from './bubble-image.png';
 import Github from './github-icon.png';
 import AmayaImage1 from './Amaya-in-da-jaus-1.png';
 import AmayaImage2 from './Amaya-in-da-jaus-2.png';
+import CenterImage1 from './info-image.png';
+
 
 function TabContent({ projectName, image1, image2, text, githubLink }) {
   return (
@@ -96,6 +98,8 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
+      <img src={CenterImage1} alt="fondo1" className="fondo1" />
+      <img src={CenterImage1} alt="fondo2" className="fondo2" />
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div

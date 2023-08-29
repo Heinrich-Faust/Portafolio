@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import bubbleImage from './bubble-image.png';
+import CenterImage from './bubble-image.png';
+import CenterImage1 from './info-image.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -54,6 +56,9 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
+      <img src={CenterImage} alt="fondo" className="fondo" />
+      <img src={CenterImage1} alt="fondo1" className="fondo1" />
+      <img src={CenterImage1} alt="fondo2" className="fondo2" />
 
       <div className="shapes-container">
         {shapes.map((shape) => (

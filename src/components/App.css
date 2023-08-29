@@ -26,6 +26,7 @@ html {
 .social-icon {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
   top: 80%;
   transition: transform 0.3s ease;
   position: relative;
@@ -139,13 +140,14 @@ nav li {
 .center-image {
   position: fixed;
   bottom: 0%;
-  left: 50%;
-  width: 40em;
-  height: 40em;
+  left: 45%;
+  width: 25em;
+  height: 25em;
 }
 
 .fondo {
   position: fixed;
+  border-radius: 50%;
   bottom: 0%;
   left: 35%;
   width: 30em;
@@ -154,6 +156,7 @@ nav li {
 
 .fondo1{
   position: fixed;
+  border-radius: 50%;
   bottom: 10%;
   left: 5%;
   width: 20em;
@@ -162,6 +165,7 @@ nav li {
 
 .fondo2 {
   position: fixed;
+  border-radius: 50%;
   bottom: 10%;
   right: 5%;
   width: 20em;
@@ -206,16 +210,16 @@ nav li {
     transform: scale(0.4); /* Ajusta el valor de escala según tu preferencia */
     transform-origin: center; /* Define el punto de origen de la escala */
   }
+  .info-image {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10em;
+    width: 10em;
+    border-radius: 100%;
+  }
 }
-.info-image {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  height: 10em;
-  width: 10em;
-  border-radius: 100%;
-  animation: floatText 6s infinite;
-}
+
 
 @keyframes floatText {
   0%, 100% {
@@ -233,10 +237,7 @@ nav li {
 }
 
 /* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .corner-gif {
-    width: 20%;
-  }
+@media (max-width: 900px) {
 
   .circle {
     font-size: 0.75em;
@@ -250,22 +251,43 @@ nav li {
     font-size: 0.75em;
   }
 
-  .info-text {
-    font-size: 1.5em;
-  }
-
 .top-left-image {
   width: 150px;
   height: 150px;
   border-width: 2px;
 }
+.fondo {
+  position: fixed;
+  bottom: 0%;
+  border-radius: 50%;
+  left: 35%;
+  width: 10em;
+  height: 10em;
 }
+
+.fondo1{
+  position: fixed;
+  border-radius: 50%;
+  bottom: 10%;
+  left: 5%;
+  width: 10em;
+  height: 10em;
+}
+
+.fondo2 {
+  position: fixed;
+  bottom: 10%;
+  border-radius: 50%;
+  right: 5%;
+  width: 10em;
+  height: 10em;
+}
+
+}
+
 
 /* Estilos para pantallas aún más pequeñas */
 @media (max-width: 480px) {
-  .corner-gif {
-    width: 25%;
-  }
 
   .circle {
     font-size: 0.5em;
@@ -279,9 +301,6 @@ nav li {
     font-size: 0.5em;
   }
 
-  .info-text {
-    font-size: 1.25em;
-  }
 
   .top-left-image {
     width: 100px;
