@@ -172,6 +172,15 @@ nav li {
   height: 20em;
 }
 
+.fondo3 {
+  position: fixed;
+  border-radius: 50%;
+  top: 10%;
+  left: 5%;
+  width: 20em;
+  height: 20em;
+}
+
 
 .bottom-image {
   position: fixed;

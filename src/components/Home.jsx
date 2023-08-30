@@ -5,7 +5,7 @@ import topLeftImage from './top-left-image.png';
 import CenterImage from './center-image.png';
 import bottomimage from './bottom-image.png';
 import Center from './center.png';
-import infoImage from './info-image.png';
+import CenterImage1 from './info-image.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -60,6 +60,8 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
+      <img src={CenterImage1} alt="fondo3" className="fondo3" />
+      <img src={CenterImage1} alt="fondo2" className="fondo2" />
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
       <img src={bottomimage} alt="bottom" className="bottom-image" />
       <img src={CenterImage} alt="top Center" className="center-image" />
@@ -96,8 +98,6 @@ function App() {
           <img src={bubbleImage} alt="Bubble" className="bubble-image" />
         </div>
       </div>
-
-      <img src={infoImage} alt="Info" className="info-image" />
     </div>
   );
 }
