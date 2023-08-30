@@ -13,7 +13,7 @@ function App() {
   const [bubbleY, setBubbleY] = useState(0);
 
   useEffect(() => {
-    const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
+    const initialShapes = Array.from({ length: Math.ceil(40 * 30) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,

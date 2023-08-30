@@ -51,7 +51,7 @@ function App() {
     const { clientX, clientY } = event;
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
-        const speedFactor = 0.075;
+        const speedFactor = 1;
         const dx = shape.x - clientX;
         const dy = shape.y - clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);
