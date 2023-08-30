@@ -67,7 +67,7 @@ nav li {
 .circle {
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: linear-gradient(45deg, rgb(184, 177, 82), rgb(248, 248, 248));
+  background: linear-gradient(45deg, rgb(0, 238, 255), rgb(131, 0, 253));
   transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
   font-size: 1em; /* Tamaño de fuente escalable */
@@ -94,7 +94,7 @@ nav li {
 .circle3 {
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(253, 0, 63));
+  background: linear-gradient(45deg, rgb(30, 151, 0), rgb(13, 17, 255));
   transform: rotate(-45deg) perspective(600px) rotateX(30deg);
   display: flex;
   font-size: 1em; /* Tamaño de fuente escalable */
