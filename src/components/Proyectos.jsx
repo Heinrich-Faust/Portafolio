@@ -3,6 +3,7 @@ import './App.css';
 import './tabcontent.css';
 import Github from './github-icon.png';
 import lets from './lets.png';
+import CenterImage from './bubble-image.png';
 import AmayaImage1 from './Amaya-in-da-jaus-1.png';
 import AmayaImage2 from './Amaya-in-da-jaus-2.png';
 import Experience1 from './Exp1.png';
@@ -124,6 +125,7 @@ function App() {
     <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
+      <img src={CenterImage} alt="fondo" className="fondo" />
       <div>
       <img src={Gif} alt="GIF" className="gif1" />
       </div>
