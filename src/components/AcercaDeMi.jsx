@@ -10,28 +10,27 @@ function App() {
   const [shapes, setShapes] = useState([]);
 
   useEffect(() => {
-    const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
+    const initialShapes = Array.from({ length: Math.ceil(40 * 30) }, (_, index) => ({
       id: index,
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       size: Math.random() * 50 + 20,
       color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`,
-      shape: 'circle1',
+      shape: 'circle',
       speedX: (Math.random() - 0.5) * 3,
       speedY: (Math.random() - 0.5) * 3,
     }));
     setShapes(initialShapes);
   }, []);
 
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
+  const handleMove = (x, y) => {
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 1;
-        const dx = shape.x - clientX;
-        const dy = shape.y - clientY;
+        const dx = shape.x - x;
+        const dy = shape.y - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceFactor = 1000 / (distance * distance);
+        const forceFactor = 2000 / (distance * distance);
 
         let newShape = {
           ...shape,
@@ -51,8 +50,21 @@ function App() {
     );
   };
 
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    handleMove(clientX, clientY);
+  };
+
+  const handleTouchMove = (event) => {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      handleMove(touch.clientX, touch.clientY);
+    }
+  };
+
+
   return (
-    <div className="App" onMouseMove={handleMouseMove}>
+    <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
       <img src={CenterImage} alt="fondo" className="fondo" />
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
