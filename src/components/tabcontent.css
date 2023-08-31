@@ -61,7 +61,7 @@
 .tabs-container {
   position: fixed;
   top: 30%;
-  left: 10px; /* Posicionamos a la izquierda */
+  left: 15px; /* Posicionamos a la izquierda */
   transform: translateY(-50%); /* Ajustamos la posición vertical */
   display: grid;
   grid-template-columns: repeat(2, auto);
