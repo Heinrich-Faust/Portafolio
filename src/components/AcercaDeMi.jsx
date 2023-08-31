@@ -77,7 +77,7 @@ function App() {
       <div className="text-box">
       <div className="scrollable-content">
       <p>
-      ¡Saludos a todos los curiosos del mundo digital y amantes de las artes marciales! Soy ese tipo con el cabello largo y crespo que a veces confunden con un hacker de película. Pero no, no tengo gafas geniales ni un cuartel general secreto, solo mi computadora y un amor inquebrantable por escribir líneas de código que cobran vida.
+      ¡Saludos! Soy ese tipo con el cabello largo y crespo que a veces confunden con un hacker de película. Pero no, no tengo gafas geniales ni un cuartel general secreto, solo mi computadora y un amor inquebrantable por escribir líneas de código que cobran vida.
 
       ¿Front-end? ¡Claro, suena como si estuviera hablando de una especie en peligro de extinción! Pero no se preocupen, aquí estoy, el "novato" valiente y curioso que está dando sus primeros pasos en el mundo de la programación. A veces me siento como un mago digital, haciendo que los botones cambien de color y las imágenes bailen al ritmo de mi melodía de HTML y CSS. Aunque, admito que mis primeros intentos podrían haber sido confundidos con una mezcla caótica de confeti en una tormenta de nieve.
 

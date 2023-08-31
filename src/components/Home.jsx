@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import topLeftImage from './top-left-image.png';
 import CenterImage from './center-image.png';
-import bottomimage from './bottom-image.png';
-import Center from './center.png';
 import CenterImage1 from './info-image.png';
 
 function App() {
@@ -64,12 +61,10 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
-      <img src={CenterImage1} alt="fondo3" className="fondo3" />
-      <img src={CenterImage1} alt="fondo2" className="fondo2" />
-      <img src={topLeftImage} alt="Top Left" className="top-left-image" />
-      <img src={bottomimage} alt="bottom" className="bottom-image" />
+      <img src={CenterImage1} alt="fondo5" className="fondo5" />
+      <img src={CenterImage1} alt="fondo4" className="fondo4" />
+      <img src={CenterImage1} alt="fondo6" className="fondo6" />
       <img src={CenterImage} alt="top Center" className="center-image" />
-      <img src={Center} alt="Center" className="center" />
 
       <div className="shapes-container">
         {shapes.map((shape) => (

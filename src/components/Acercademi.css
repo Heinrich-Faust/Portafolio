@@ -29,8 +29,8 @@
   position: absolute;
   top: 70%; 
   width: auto;
-  height: 20em; /* Ajusta según el tamaño de la imagen */
-  z-index: 1000; /* Asegura que los muñequitos estén sobre el cuadro de texto */
+  height: 20em; 
+  z-index: 1000; 
 }
 
 .muneco-izquierdo {
@@ -42,3 +42,24 @@
     right: 4.3%;
     transform: translate(0, -50%)
 }
+@media (max-width: 767px) {
+  .muneco-izquierdo,
+  .muneco-derecho {
+  position: absolute;
+  top: 70%; 
+  width: auto;
+  height: 8em; /* Ajusta según el tamaño de la imagen */
+  z-index: 1000; /* Asegura que los muñequitos estén sobre el cuadro de texto */
+  
+}
+.muneco-izquierdo {
+  left: 0px;
+  transform: translate(0, -50%) scaleX(-1);
+}
+
+.muneco-derecho {
+  right: 1%;
+  transform: translate(0, -50%)
+}
+}
+  
