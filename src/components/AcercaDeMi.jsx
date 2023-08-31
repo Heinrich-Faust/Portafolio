@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import bubbleImage from './bubble-image.png';
+import './Acercademi.css';
 import CenterImage from './bubble-image.png';
 import CenterImage1 from './info-image.png';
+import MunecoIzquierdo from './muneco.png';
+import MunecoDerecho from './muneco.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
-  const [bubbleX, setBubbleX] = useState(0);
-  const [bubbleY, setBubbleY] = useState(0);
 
   useEffect(() => {
     const initialShapes = Array.from({ length: Math.ceil(30 * 30) }, (_, index) => ({
@@ -49,9 +49,6 @@ function App() {
         return newShape;
       })
     );
-
-    setBubbleX(clientX);
-    setBubbleY(clientY);
   };
 
   return (
@@ -76,20 +73,27 @@ function App() {
           />
         ))}
       </div>
+      <img src={MunecoIzquierdo} alt="Muñequito izquierdo" className="muneco-izquierdo" />
+      <div className="text-box">
+      <div className="scrollable-content">
+      <p>
+      ¡Saludos a todos los curiosos del mundo digital y amantes de las artes marciales! Soy ese tipo con el cabello largo y crespo que a veces confunden con un hacker de película. Pero no, no tengo gafas geniales ni un cuartel general secreto, solo mi computadora y un amor inquebrantable por escribir líneas de código que cobran vida.
 
-      <div className="bubble-container">
-        <div
-          className="bubble"
-          style={{
-            left: bubbleX,
-            top: bubbleY,
-          }}
-        >
-          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
-        </div>
-      </div>
+      ¿Front-end? ¡Claro, suena como si estuviera hablando de una especie en peligro de extinción! Pero no se preocupen, aquí estoy, el "novato" valiente y curioso que está dando sus primeros pasos en el mundo de la programación. A veces me siento como un mago digital, haciendo que los botones cambien de color y las imágenes bailen al ritmo de mi melodía de HTML y CSS. Aunque, admito que mis primeros intentos podrían haber sido confundidos con una mezcla caótica de confeti en una tormenta de nieve.
 
+      Pero, ¿saben qué dicen? Que los errores son solo oportunidades para aprender, ¡y créanme, he aprendido tanto que podría llenar un servidor! Mi enfoque es más proactivo que un gato persiguiendo un láser. Siempre estoy ansioso por aprender más, mejorar mis habilidades y sumergirme en los desafíos que el código me lanza, incluso si a veces me hacen arrancarme esos cabellos crespos.
+
+      Ah, pero no piensen que mi vida es solo un montón de líneas de código y píxeles rebeldes. Cuando mi computadora me da un respiro, me lanzo a la lectura como si fuera un portal a otros mundos. Las palabras son mis aliadas tanto en la pantalla como entre las páginas de un buen libro. Y para equilibrar todas esas horas sedentarias, canalizo mi energía aprendiendo artes marciales. No les mentiré, en mi mente, a veces imagino que estoy defendiendo mi código de los bugs con una serie de patadas bien ejecutadas.
+
+      Sé que suena como si estuviera viviendo en un mundo de bits y bytes, pero mi realidad es más colorida que la paleta de un diseñador. Soy un amante de las posibilidades, un tejedor de sueños digitales y un luchador contra los errores del código. Así que, si alguna vez se cruzan con alguien que se parece a un cruce entre un desarrollador y un ninja, ¡eso probablemente sea yo!
+
+      En resumen, soy un chico con cabello largo, pasión por el código, amor por las palabras, devoción por las artes marciales y un inquebrantable deseo de mejorar. Así que aquí estoy, balanceando entre la elegancia del diseño y la lucha contra los problemas técnicos, creando un mundo donde la poesía del código se mezcla con la destreza física de las artes marciales. ¡Gracias! ¡Que el código esté siempre a su favor y las patadas nunca falten a su objetivo!
+
+      </p>
     </div>
+  </div>
+  <img src={MunecoDerecho} alt="Muñequito derecho" className="muneco-derecho" />
+</div>
   );
 }
 

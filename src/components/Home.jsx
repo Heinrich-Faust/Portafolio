@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import bubbleImage from './bubble-image.png';
 import topLeftImage from './top-left-image.png';
 import CenterImage from './center-image.png';
 import bottomimage from './bottom-image.png';
@@ -9,8 +8,6 @@ import CenterImage1 from './info-image.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
-  const [bubbleX, setBubbleX] = useState(0);
-  const [bubbleY, setBubbleY] = useState(0);
 
   useEffect(() => {
     const initialShapes = Array.from({ length: Math.ceil(40 * 30) }, (_, index) => ({
@@ -54,8 +51,7 @@ function App() {
       })
     );
 
-    setBubbleX(clientX);
-    setBubbleY(clientY);
+
   };
 
   return (
@@ -87,17 +83,7 @@ function App() {
         ))}
       </div>
 
-      <div className="bubble-container">
-        <div
-          className="bubble"
-          style={{
-            left: bubbleX,
-            top: bubbleY,
-          }}
-        >
-          <img src={bubbleImage} alt="Bubble" className="bubble-image" />
-        </div>
-      </div>
+  
     </div>
   );
 }

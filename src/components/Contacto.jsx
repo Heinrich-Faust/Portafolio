@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import bubbleImage from './bubble-image.png';
 import CenterImage from './bubble-image.png';
 import CenterImage1 from './info-image.png';
 import Github from './github-icon-1.png';
@@ -11,8 +10,6 @@ import Linkedin from './Linkedin.png';
 
 function App() {
   const [shapes, setShapes] = useState([]);
-  const [bubbleX, setBubbleX] = useState(0);
-  const [bubbleY, setBubbleY] = useState(0);
 
   useEffect(() => {
     const initialShapes = Array.from({ length: Math.ceil(40 * 30) }, (_, index) => ({
@@ -54,9 +51,6 @@ function App() {
         return newShape;
       })
     );
-
-    setBubbleX(clientX);
-    setBubbleY(clientY);
   };
 
   return (
@@ -82,29 +76,17 @@ function App() {
         ))}
       </div>
 
-      <div className="bubble-container">
-        <div
-          className="bubble"
-          style={{
-            left: bubbleX,
-            top: bubbleY,
-          }}
-        >
-          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
-        </div>
-      </div>
-
       <div className="social-icons">
-        <a href="Enlace de WhatsApp">
+        <a href="https://wa.me/573209676856">
           <img src={Whatsapp} alt="WhatsApp" className="social-icon" />
         </a>
-        <a href="Enlace de Facebook">
+        <a href="https://www.facebook.com/juanpablo.amayaperez/">
           <img src={Facebook} alt="Facebook" className="social-icon" />
         </a>
         <a href="https://www.linkedin.com/in/juan-pablo-amaya-perez-00260824a">
           <img src={Linkedin} alt="LinkedIn" className="social-icon" />
         </a>
-        <a href="Enlace de Instagram">
+        <a href="https://www.instagram.com/amaya_juanp/">
           <img src={Instagram} alt="Instagram" className="social-icon" />
         </a>
         <a href="https://github.com/Heinrich-Faust">

@@ -1,0 +1,44 @@
+.text-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-family: Comic Sans MS;
+    font-size: 17px;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5%;
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    height: 500px;
+    max-height: 70%;
+    width: 900px; /* Ancho del cuadro de texto */
+    max-width: 80%; /* Máximo ancho en relación con la ventana */
+    text-align: center; /* Alinear el texto al centro */
+    overflow: hidden; 
+  }
+  
+.scrollable-content {
+    max-height: 100%; 
+    overflow-y: auto; 
+}
+  
+.muneco-izquierdo,
+.muneco-derecho {
+  position: absolute;
+  top: 70%; 
+  width: auto;
+  height: 20em; /* Ajusta según el tamaño de la imagen */
+  z-index: 1000; /* Asegura que los muñequitos estén sobre el cuadro de texto */
+}
+
+.muneco-izquierdo {
+    left: 4.3%;
+    transform: translate(0, -50%) scaleX(-1);
+}
+
+.muneco-derecho {
+    right: 4.3%;
+    transform: translate(0, -50%)
+}

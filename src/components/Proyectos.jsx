@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import './tabcontent.css';
-import bubbleImage from './bubble-image.png';
 import Github from './github-icon.png';
 import AmayaImage1 from './Amaya-in-da-jaus-1.png';
 import AmayaImage2 from './Amaya-in-da-jaus-2.png';
@@ -29,8 +28,6 @@ function TabContent({ projectName, image1, image2, text, githubLink }) {
 
 function App() {
   const [shapes, setShapes] = useState([]);
-  const [bubbleX, setBubbleX] = useState(0);
-  const [bubbleY, setBubbleY] = useState(0);
   const [activeTab, setActiveTab] = useState('proyecto1');
 
   useEffect(() => {
@@ -73,9 +70,6 @@ function App() {
         return newShape;
       })
     );
-
-    setBubbleX(clientX);
-    setBubbleY(clientY);
   };
 
   const handleTabChange = (tabName) => {
@@ -86,6 +80,33 @@ function App() {
     {
       tabName: 'proyecto1',
       projectName: 'Amaya In Da House',
+      image1: AmayaImage1,
+      image2: AmayaImage2,
+      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
+      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
+    },
+
+    {
+      tabName: 'proyecto2',
+      projectName: 'Lacrimogena Art Tatto',
+      image1: AmayaImage1,
+      image2: AmayaImage2,
+      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
+      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
+    },
+
+    {
+      tabName: 'proyecto3',
+      projectName: 'Lacrimogena Art Tatto',
+      image1: AmayaImage1,
+      image2: AmayaImage2,
+      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
+      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
+    },
+
+    {
+      tabName: 'proyecto4',
+      projectName: 'Lacrimogena Art Tatto',
       image1: AmayaImage1,
       image2: AmayaImage2,
       text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
@@ -117,18 +138,7 @@ function App() {
         ))}
       </div>
 
-      <div className="bubble-container">
-        <div
-          className="bubble"
-          style={{
-            left: bubbleX,
-            top: bubbleY,
-          }}
-        >
-          <img src={bubbleImage} alt="Burbuja" className="bubble-image" />
-        </div>
-      </div>
-
+    
       <div className="tabs-container">
         {tabContentData.map((tabData) => (
           <button
