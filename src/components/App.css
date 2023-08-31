@@ -192,40 +192,19 @@ nav li {
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 767px) {
-  .top-left-image {
-    bottom: 30%;
-    left: 1%;
-    transform: scale(1); /* Ajusta el valor de escala según tu preferencia */
-    transform-origin: center; /* Define el punto de origen de la escala */
-  }
   
-  .center {
-    top: 0.1%;
-    left: 1%;
-    transform: scale(0.5); /* Ajusta el valor de escala según tu preferencia */
-    transform-origin: center; /* Define el punto de origen de la escala */
-  }
-
   .center-image {
     top: 30%;
     left: 0%;
-    transform: scale(0.5); /* Ajusta el valor de escala según tu preferencia */
+    transform: scale(1); /* Ajusta el valor de escala según tu preferencia */
     transform-origin: center; /* Define el punto de origen de la escala */
   }
 
-  .bottom-image {
-    top: 10%;
-    right: 0%;
-    transform: scale(0.4); /* Ajusta el valor de escala según tu preferencia */
-    transform-origin: center; /* Define el punto de origen de la escala */
-  }
+  .top-left-image,
+  .center,
+  .bottom-image,
   .info-image {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    height: 10em;
-    width: 10em;
-    border-radius: 100%;
+    display: none;
   }
 }
 
@@ -245,113 +224,4 @@ nav li {
   }
 }
 
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 900px) {
 
-  .circle {
-    font-size: 0.75em;
-  }
-
-  .link-button {
-    font-size: 0.5em;
-  }
-
-  .popup-content {
-    font-size: 0.75em;
-  }
-
-.top-left-image {
-  width: 150px;
-  height: 150px;
-  border-width: 2px;
-}
-.fondo {
-  position: fixed;
-  bottom: 0%;
-  border-radius: 50%;
-  left: 35%;
-  width: 10em;
-  height: 10em;
-}
-
-.fondo1{
-  position: fixed;
-  border-radius: 50%;
-  bottom: 10%;
-  left: 5%;
-  width: 10em;
-  height: 10em;
-}
-
-.fondo2 {
-  position: fixed;
-  bottom: 10%;
-  border-radius: 50%;
-  right: 5%;
-  width: 10em;
-  height: 10em;
-}
-
-}
-
-
-/* Estilos para pantallas aún más pequeñas */
-@media (max-width: 480px) {
-
-  .circle {
-    font-size: 0.5em;
-  }
-
-  .link-button {
-    font-size: 0.35em;
-  }
-
-  .popup-content {
-    font-size: 0.5em;
-  }
-
-
-  .top-left-image {
-    width: 100px;
-    height: 100px;
-    border-width: 1px;
-  }
-  @media (max-width: 767px) {
-    .top-left-image {
-      bottom: 30%;
-      left: 1%;
-      transform: scale(0.5); /* Ajusta el valor de escala según tu preferencia */
-      transform-origin: center; /* Define el punto de origen de la escala */
-    }
-    
-    .center {
-      top: 0.1%;
-      left: 1%;
-      transform: scale(0.2); /* Ajusta el valor de escala según tu preferencia */
-      transform-origin: center; /* Define el punto de origen de la escala */
-    }
-  
-    .center-image {
-      top: 30%;
-      left: 0%;
-      transform: scale(0.2); /* Ajusta el valor de escala según tu preferencia */
-      transform-origin: center; /* Define el punto de origen de la escala */
-    }
-  
-    .bottom-image {
-      top: 10%;
-      right: 0%;
-      transform: scale(0.2); /* Ajusta el valor de escala según tu preferencia */
-      transform-origin: center; /* Define el punto de origen de la escala */
-    }
-    .info-image {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      height: 10em;
-      width: 10em;
-      border-radius: 100%;
-    }
-  }
-  
-}
