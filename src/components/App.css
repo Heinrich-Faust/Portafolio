@@ -184,36 +184,16 @@ nav li {
     transform: scale(1); 
     transform-origin: center;
   }
+  .fondo5,
   .fondo6,
   .fondo1,
   .fondo2 {
     display: none;
   }
 
-  .fondo5{
-    display: none;
-  }
   .fondo4{
     left: 40%;
     width: 20em;
     height: 20em;
   }
-  
-
-@keyframes floatText {
-  0%, 100% {
-    transform: translate(-50%, -50%) translate(calc(100px * cos(0deg)), calc(100px * sin(0deg)));
-  }
-  25% {
-    transform: translate(-50%, -50%) translate(calc(100px * cos(90deg)), calc(100px * sin(90deg)));
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(calc(100px * cos(180deg)), calc(100px * sin(180deg)));
-  }
-  75% {
-    transform: translate(-50%, -50%) translate(calc(100px * cos(270deg)), calc(100px * sin(270deg)));
-  }
-}
-
-
 }
