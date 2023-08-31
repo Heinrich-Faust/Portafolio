@@ -3,6 +3,7 @@ import './App.css';
 import CenterImage from './center-image.png';
 import CenterImage1 from './info-image.png';
 import Gif from './gif.gif';
+import UserWayWidget from './UserWayWidget';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
+      <UserWayWidget />
       <img src={CenterImage1} alt="fondo5" className="fondo5" />
       <img src={CenterImage1} alt="fondo4" className="fondo4" />
       <img src={CenterImage1} alt="fondo6" className="fondo6" />
