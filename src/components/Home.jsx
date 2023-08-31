@@ -32,7 +32,7 @@ function App() {
         const dx = shape.x - clientX;
         const dy = shape.y - clientY;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceFactor = 300 / (distance * distance);
+        const forceFactor = 2000 / (distance * distance);
 
         let newShape = {
           ...shape,
