@@ -23,14 +23,12 @@ function App() {
     setShapes(initialShapes);
   }, []);
 
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
-
+  const handleMove = (x, y) => {
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 1;
-        const dx = shape.x - clientX;
-        const dy = shape.y - clientY;
+        const dx = shape.x - x;
+        const dy = shape.y - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const forceFactor = 2000 / (distance * distance);
 
@@ -50,12 +48,22 @@ function App() {
         return newShape;
       })
     );
+  };
 
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    handleMove(clientX, clientY);
+  };
 
+  const handleTouchMove = (event) => {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      handleMove(touch.clientX, touch.clientY);
+    }
   };
 
   return (
-    <div className="App" onMouseMove={handleMouseMove}>
+    <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
       <img src={CenterImage1} alt="fondo3" className="fondo3" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
       <img src={topLeftImage} alt="Top Left" className="top-left-image" />
@@ -63,15 +71,12 @@ function App() {
       <img src={CenterImage} alt="top Center" className="center-image" />
       <img src={Center} alt="Center" className="center" />
 
-
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
             key={shape.id}
             className={`shape ${shape.shape}`}
             style={{
-
-              
               left: shape.x,
               top: shape.y,
               width: shape.size,
@@ -82,8 +87,6 @@ function App() {
           />
         ))}
       </div>
-
-  
     </div>
   );
 }
