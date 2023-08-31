@@ -52,15 +52,14 @@ function App() {
     setShapes(initialShapes);
   }, []);
 
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
+  const handleMove = (x, y) => {
     setShapes((prevShapes) =>
       prevShapes.map((shape) => {
         const speedFactor = 1;
-        const dx = shape.x - clientX;
-        const dy = shape.y - clientY;
+        const dx = shape.x - x;
+        const dy = shape.y - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceFactor = 200 / (distance * distance);
+        const forceFactor = 1500 / (distance * distance);
 
         let newShape = {
           ...shape,
@@ -80,6 +79,17 @@ function App() {
     );
   };
 
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    handleMove(clientX, clientY);
+  };
+
+  const handleTouchMove = (event) => {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      handleMove(touch.clientX, touch.clientY);
+    }
+  };
   const handleTabChange = (tabName) => {
     setActiveTab(tabName);
   };
@@ -111,7 +121,7 @@ function App() {
   const activeTabData = tabContentData.find((tabData) => tabData.tabName === activeTab);
 
   return (
-    <div className="App" onMouseMove={handleMouseMove}>
+    <div className="App" onMouseMove={handleMouseMove} onTouchMove={handleTouchMove}>
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
       <div>
