@@ -47,7 +47,13 @@
   right: 10px;
   bottom: 10px;
 }
-
+.lets {
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  left: 10px;
+  bottom: 10px;
+}
 /* Estilos para los botones de las pestañas */
 .tabs-container {
   position: fixed;

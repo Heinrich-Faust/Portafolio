@@ -7,6 +7,7 @@ import Whatsapp from './whatsapp.png';
 import Facebook from './Facebook.png';
 import Instagram from './Instagram.png';
 import Linkedin from './Linkedin.png';
+import Gif from './gif.gif';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -69,7 +70,9 @@ function App() {
       <img src={CenterImage} alt="fondo" className="fondo" />
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
-
+      <div>
+      <img src={Gif} alt="GIF" className="gif1" />
+      </div>
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -86,7 +89,7 @@ function App() {
           />
         ))}
       </div>
-
+            
       <div className="social-icons">
         <a href="https://wa.me/573209676856">
           <img src={Whatsapp} alt="WhatsApp" className="social-icon" />

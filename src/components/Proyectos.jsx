@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import './tabcontent.css';
 import Github from './github-icon.png';
+import lets from './lets.png';
 import AmayaImage1 from './Amaya-in-da-jaus-1.png';
 import AmayaImage2 from './Amaya-in-da-jaus-2.png';
 import CenterImage1 from './info-image.png';
+import Gif from './gif.gif';
 
-
-function TabContent({ projectName, image1, image2, text, githubLink }) {
+function TabContent({ image1, image2, text, githubLink,letsLink }) {
   return (
     <div className="tab-content">
       <div className="images-container">
@@ -20,6 +21,11 @@ function TabContent({ projectName, image1, image2, text, githubLink }) {
       <div className="github-button">
         <a href={githubLink} target="_blank" rel="noopener noreferrer">
           <img src={Github} alt="github" className="github-logo" />
+        </a>
+      </div>
+      <div className="lets-button">
+        <a href={letsLink} target="_blank" rel="noopener noreferrer">
+          <img src={lets} alt="lets" className="lets" />
         </a>
       </div>
     </div>
@@ -84,34 +90,9 @@ function App() {
       image2: AmayaImage2,
       text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
       githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
+      letsLink: 'https://heinrich-faust.github.io/Amaya-In-Da-House/',
     },
 
-    {
-      tabName: 'proyecto2',
-      projectName: 'Lacrimogena Art Tatto',
-      image1: AmayaImage1,
-      image2: AmayaImage2,
-      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
-      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
-    },
-
-    {
-      tabName: 'proyecto3',
-      projectName: 'Lacrimogena Art Tatto',
-      image1: AmayaImage1,
-      image2: AmayaImage2,
-      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
-      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
-    },
-
-    {
-      tabName: 'proyecto4',
-      projectName: 'Lacrimogena Art Tatto',
-      image1: AmayaImage1,
-      image2: AmayaImage2,
-      text: 'Pagina creada completamente en Html y Css, es un blog de moda masculina, con varias entradas y musica que genera un ambiente deluxe, entorno a la moda.',
-      githubLink: 'https://github.com/Heinrich-Faust/Amaya-In-Da-House',
-    },
     
   ];
 
@@ -121,6 +102,9 @@ function App() {
     <div className="App" onMouseMove={handleMouseMove}>
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
+      <div>
+      <img src={Gif} alt="GIF" className="gif1" />
+      </div>
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
@@ -158,6 +142,7 @@ function App() {
           image2={activeTabData.image2}
           text={activeTabData.text}
           githubLink={activeTabData.githubLink}
+          letsLink={activeTabData.letsLink}
         />
       )}
     </div>

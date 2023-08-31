@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import CenterImage from './center-image.png';
 import CenterImage1 from './info-image.png';
+import Gif from './gif.gif';
 
 function App() {
   const [shapes, setShapes] = useState([]);
@@ -65,7 +66,9 @@ function App() {
       <img src={CenterImage1} alt="fondo4" className="fondo4" />
       <img src={CenterImage1} alt="fondo6" className="fondo6" />
       <img src={CenterImage} alt="top Center" className="center-image" />
-
+    <div>
+      <img src={Gif} alt="GIF" className="gif" />
+    </div>
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div

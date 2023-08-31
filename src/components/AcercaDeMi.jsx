@@ -3,6 +3,7 @@ import './App.css';
 import './Acercademi.css';
 import CenterImage from './bubble-image.png';
 import CenterImage1 from './info-image.png';
+import Gif from './gif.gif';
 import MunecoIzquierdo from './muneco.png';
 import MunecoDerecho from './muneco.png';
 
@@ -68,7 +69,9 @@ function App() {
       <img src={CenterImage} alt="fondo" className="fondo" />
       <img src={CenterImage1} alt="fondo1" className="fondo1" />
       <img src={CenterImage1} alt="fondo2" className="fondo2" />
-
+      <div>
+      <img src={Gif} alt="GIF" className="gif1" />
+      </div>
       <div className="shapes-container">
         {shapes.map((shape) => (
           <div
