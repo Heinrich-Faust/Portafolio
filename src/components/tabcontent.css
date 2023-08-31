@@ -1,20 +1,21 @@
 /* Estilos para el contenido de las pestañas */
 .tab-content {
-  position: fixed;
-  top: 56%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  z-index: 9999; /* Asegura que el contenido esté por encima de otros elementos */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   padding: 2em;
-  width: 90%;
-  max-width: 600px;
+  max-height: 70%;
+  max-width: 70%;
+  overflow-y: auto; /* Agrega overflow-y para la barra de desplazamiento */
+  position: fixed; /* Vuelve a agregar position: fixed; si es necesario para tu diseño */
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .text-container {
@@ -41,19 +42,21 @@
 }
 
 .github-logo {
-  position: absolute;
+  position: sticky;
   height: 2.5em;
   width: 2.5em;
-  right: 10px;
-  bottom: 10px;
+  bottom: 10px; /* Alinea en la esquina inferior */
+  right: 10px; /* Alinea en la esquina derecha */
 }
+
 .lets {
-  position: absolute;
+  position: sticky;
   height: 2.5em;
   width: 2.5em;
-  left: 10px;
-  bottom: 10px;
+  bottom: 10px; /* Alinea en la esquina inferior */
+  left: 10px; /* Alinea en la esquina izquierda */
 }
+
 /* Estilos para los botones de las pestañas */
 .tabs-container {
   position: fixed;
@@ -85,21 +88,26 @@
   color: #fff;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
-  .tabs-container {
-    top: 40%;
-  }
-
   .tab-content {
-    padding: 1em;
+    font-size: 0.8em;  
+    max-width: 80%; 
+    max-height: 60%; 
   }
 
-  .github-logo {
-    position: absolute;
-    height: 2em;
-    width: 2em;
-    right: 5px;
-    bottom: 5px;
+  .tabs-container {
+    position: absolute; 
+    top: 20%;
+    left: 10px; 
+    transform: translateY(-50%); 
+    grid-template-columns: 1fr; 
+    grid-gap: 5px; 
+  }
+
+  .tab-button {
+    padding: 3px 0.5px; 
+    font-size: 0.6em; 
+    margin: 3px 0; 
   }
 }

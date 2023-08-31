@@ -5,6 +5,8 @@ import Github from './github-icon.png';
 import lets from './lets.png';
 import AmayaImage1 from './Amaya-in-da-jaus-1.png';
 import AmayaImage2 from './Amaya-in-da-jaus-2.png';
+import Experience1 from './Exp1.png';
+import Experience2 from './Exp2.png';
 import CenterImage1 from './info-image.png';
 import Gif from './gif.gif';
 
@@ -85,6 +87,16 @@ function App() {
   const tabContentData = [
     {
       tabName: 'proyecto1',
+      projectName: 'Experiencia',
+      image1: Experience1,
+      image2: Experience2,
+      text: 'Soy un desarrollador front-end con sólidos conocimientos en tecnologías web modernas. Experiencia en la creación de interfaces de usuario atractivas y funcionales utilizando React, JavaScript, HTML y CSS. Capacidad demostrada para trabajar bajo presión y entregar resultados de alta calidad en plazos ajustados. Apasionado por mantenerse al tanto de las últimas tendencias y mejores prácticas en desarrollo front-end.',
+      githubLink: 'https://github.com/Heinrich-Faust/',
+      letsLink: 'https://drive.google.com/file/d/16sGkcq9zC_33WEhuZkJsEDo-N5CL7_3A/view?usp=sharing',
+    },
+
+    {
+      tabName: 'proyecto2',
       projectName: 'Amaya In Da House',
       image1: AmayaImage1,
       image2: AmayaImage2,
